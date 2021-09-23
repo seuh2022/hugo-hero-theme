@@ -17,7 +17,7 @@
 
 {{ define "main" }}
 
-{{ partial "hero-image-fullscreen.html" (dict "background" .Params.heroBackground "heading" .Params.heroHeading "subheading" .Params.heroSubHeading "content" .)}}
+{{ partial "hero-image-fullscreen.html" (dict "background" .Params.heroBackground "heading" .Params.heroHeading "subheading" .Params.heroSubHeading "subheading2" .Params.heroSubHeading2 "content" .)}}
 
 {{ $headless := .Site.GetPage "/homepage" }}
 {{ $reusablePages := $headless.Resources.ByType "page" }}
@@ -53,6 +53,8 @@
     </div>
   </div>
 </div>
+{{else}}
+none found
 {{end}}
 
 {{ range first 1 (after 1 $reusablePages) }}
