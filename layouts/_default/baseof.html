@@ -7,7 +7,7 @@
   <title>{{ block "title" . }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {{ block "meta_tags" . }}{{end}}
-  <link rel="icon" href="{{ .Site.BaseURL }}favicon.png">
+  <link rel="icon" href="{{ .Site.BaseURL }}/favicon.png">
 
   {{ if .Site.IsServer }}
   {{ $style := resources.Get "scss/style.scss" | toCSS (dict "targetPath" "css/style.css" "enableSourceMap" true) }}
@@ -22,6 +22,13 @@
 </head>
 
 <body class='page {{ block "body_classes" . }}{{ end }}'>
+  <div>
+  {{ if .Site.Params.PrintEnvironment }}
+     This is the {{ .Site.Params.Environment }} environment
+    running on <a href="{{ .Site.BaseURL }}">{{ .Site.BaseURL }}</a>
+     - please visit the production website at <a href="{{ .Site.Params.ProductionSite }}">{{ .Site.Params.ProductionSite }}</a> instead!
+  {{ end }}
+</div>
   {{ partial "main-menu-mobile.html" . }}
   <div id="wrapper" class="wrapper">
     {{ partial "header.html" . }}
