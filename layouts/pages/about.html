@@ -27,3 +27,7 @@
 {{ .Content }}
 
 {{ end }}
+
+{{ define "template" }}
+  {{ partial "show-template" (dict "Which" .Kind "Template" "(theme) layouts/pages/about.html") }}
+{{ end }}

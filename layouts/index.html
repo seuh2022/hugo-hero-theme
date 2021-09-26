@@ -10,6 +10,10 @@
 <meta name="twitter:creator" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_creator }}" />
 {{ end }}
 
+{{ define "template" }}
+  {{ partial "show-template" (dict "Which" .Kind "Template" "(theme) layouts/index.html") }}
+{{ end }}
+
 {{ define "main" }}
 
 {{ partial "hero-image-fullscreen.html" (dict "background" .Params.heroBackground "heading" .Params.heroHeading "subheading" .Params.heroSubHeading "subheading2" .Params.heroSubHeading2 "content" .)}}

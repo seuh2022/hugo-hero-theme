@@ -21,3 +21,7 @@
 </div>
 
 {{ end }}
+
+{{ define "template" }}
+  {{ partial "show-template" (dict "Which" .Kind "Template" "(theme) layouts/_default/list.html") }}
+{{ end }}

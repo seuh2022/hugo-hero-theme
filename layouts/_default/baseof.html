@@ -44,6 +44,12 @@
   {{ block "footer_js" . }}
   {{ end }}
 
+  {{ if (or (.Site.IsServer) (not (eq hugo.Environment "production"))) }}
+  {{ partial "debug.html" . }}
+  {{ block "template" . }}block template not defined{{ end }}
+  {{ end }}
+
+
   {{ if .Site.IsServer }}
   <script type="text/javascript" src="{{ $scripts.RelPermalink }}"></script>
   {{ else }}

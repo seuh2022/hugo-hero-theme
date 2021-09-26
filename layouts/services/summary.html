@@ -11,3 +11,6 @@
     {{ .Content | truncate 120 "..." }}
   </div>
 </div>
+{{ define "template" }}
+  {{ partial "show-template" (dict "Which" .Kind "Template" "(theme) layouts/services/summary.html") }}
+{{ end }}
