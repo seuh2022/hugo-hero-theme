@@ -17,35 +17,20 @@
   <div class="row">
     <div class="col-12 col-md-8">
       {{ .Content }}
-        {{if false }}
-      <ul>
-        {{if .Site.Data.contact.phone }}
-        <li><strong>Phone: </strong>{{ .Site.Data.contact.phone }}</li>
-        {{ end }}
-        <li><strong>Email: </strong><a href="mailto:{{ .Site.Data.contact.email }}">
-            {{ .Site.Data.contact.email }}</a></li>
-        {{ if .Site.Data.contact.address }}
-        <li style="white-space: pre-wrap;"><strong>Adresse: </strong><br>{{ .Site.Data.contact.address }}</li>
-        {{ end }}
-      </ul>
-      {{if .Site.Data.contact.hours }}
-      <h4 class="mt-4">Business Hours</h4>
-      <table class="table table-sm opening-hours-table">
-        {{ range .Site.Data.contact.hours }}
-        <tr>
-          <td class="day font-weight-bold">{{ .day }}</td>
-          <td class="opens">{{ .open }}</td>
-          <td>-</td>
-          <td class="closes">{{ .close }}</td>
-        </tr>
-        {{ end }}
-      </table>
-      {{ end }}
-      {{ end }}
     </div>
+
+    <div class="col-12 col-md-3">
+      <a class="twitter-timeline" data-width="220" data-height="400" data-theme="light" href="https://twitter.com/seuh2022?ref_src=twsrc%5Etfw">Tweets by seuh2022</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    </div>
+
   </div>
 </div>
+
 {{ end }}
+
+
+
 
 {{ define "template" }}
   {{ partial "show-template" (dict "Which" .Kind "Template" "(theme) layouts/contact/contact.html") }}
