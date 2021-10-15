@@ -7,3 +7,11 @@ menuTrigger.onclick = function() {
     menuTrigger.classList.toggle('is-active')
     body.classList.toggle('lock-scroll')
 }
+
+
+var tables = document.getElementsByTagName("table");
+    for (i = 0; i < tables.length; i++) {
+      tables[i].classList.add("table");
+      tables[i].classList.add("table-sm");
+      tables[i].classList.add("table-striped");
+    }
