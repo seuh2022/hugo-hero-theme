@@ -9,7 +9,7 @@
           </ul>
           <ul>
 
-            <li class="zerostatic"><a href="{{ .Site.BaseURL }}">{{ .Site.BaseURL }}</a> v {{ hugo.CommitHash }}</li>
+            <li class="zerostatic"><a href="{{ .Site.BaseURL }}">{{ .Site.BaseURL }}</a> v gh: {{ os.Getenv "GITHUB_REF" }} / v drone: {{ os.Getenv "DRONE_COMMIT_REF" }}</li>
           </ul>
         </div>
       </div>
